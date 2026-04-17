@@ -12,3 +12,5 @@ jobs:
         run: |
           echo "Test"
           git status
+          git branch --show-current
+          ls -la
