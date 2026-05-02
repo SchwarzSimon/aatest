@@ -5,12 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
       - name: Build and Test
         run: |
-          echo "Test"
-          git status
-          git branch --show-current
-          ls -la
+          echo ${{ github.actor }}"
+          echo ${{ github.event.pull_request.user.login }}"
