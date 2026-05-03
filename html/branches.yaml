@@ -1,0 +1,3 @@
+---
+beats:
+  Filebeat Debug/filebeat/docs/8.19: local
