@@ -1,0 +1,11 @@
+name: Test
+on:
+  pull_request:
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        run: |
+          echo "Hi"
