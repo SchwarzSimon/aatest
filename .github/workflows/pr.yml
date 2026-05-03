@@ -1,11 +1,11 @@
-on: pull_request_target
+name: Test
+on:
+  pull_request:
 
-# checkout head_ref
 jobs:
-  build:
+  auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Build and Test
+      - name: Hello
         run: |
-          echo ${{ github.actor }}"
-          echo ${{ github.event.pull_request.user.login }}"
+          echo "Hi"
