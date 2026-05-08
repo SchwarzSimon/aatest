@@ -1,1 +1,4 @@
-queue_rules: []
+defaults:
+  actions:
+    rebase:
+      bot_account: SchwarzSimon
