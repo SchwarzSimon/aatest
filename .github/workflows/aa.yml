@@ -1,12 +1,27 @@
-name: Print author association
+name: Print comment author info
 
 on:
   issue_comment:
     types: [created]
 
+permissions:
+  contents: read
+
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - name: Print author association
-        run: echo "${{ github.event.comment.author_association }}"
+      - name: Print author association and repo permission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+        run: |
+          echo "author_association=${{ github.event.comment.author_association }}"
+
+          permission="$(
+            gh api \
+              repos/${{ github.repository }}/collaborators/$COMMENT_AUTHOR/permission \
+              --jq '.permission' 2>/dev/null || echo "none_or_unknown"
+          )"
+
+          echo "repo_permission=$permission"
