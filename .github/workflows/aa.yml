@@ -1,0 +1,12 @@
+name: Print author association
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print author association
+        run: echo "${{ github.event.comment.author_association }}"
