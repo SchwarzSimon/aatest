@@ -1,3 +1,12 @@
 queue_rules: []
 merge_protections_settings:
   reporting_method: check-runs
+
+pull_request_rules:
+  - name: Automatically rebase outdated PRs
+    conditions:
+      - -conflict
+      - base=main
+    actions:
+      rebase:
+        bot_account: simon-testaccount
