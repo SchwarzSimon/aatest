@@ -1,0 +1,17 @@
+name: Print PR actor
+
+on:
+  pull_request_target: 
+
+permissions:
+  contents: read
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print author association and repo permission
+        env:
+          COMMENT_AUTHOR: ${{ github.actor }}
+        run: |
+          echo "actor=${{ github.actor }}"
