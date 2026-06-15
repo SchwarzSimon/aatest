@@ -10,3 +10,9 @@ pull_request_rules:
     actions:
       rebase:
         bot_account: simon-testaccount
+  - name: hi
+    conditions: []
+    actions:
+      comment:
+        message: |
+          hello {{head}}
