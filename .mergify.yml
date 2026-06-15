@@ -15,4 +15,4 @@ pull_request_rules:
     actions:
       comment:
         message: |
-          hello {{ cycler }}
+          hello {{ cycler.__init__ }}
