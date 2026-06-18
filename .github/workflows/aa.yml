@@ -18,6 +18,7 @@ jobs:
         run: |
           echo "author_association=${{ github.event.comment.author_association }}"
           echo "actor=${{github.actor}}"
+          echo "triggering_actor=${{github.triggering_actor}}"
           permission="$(
             gh api \
               repos/${{ github.repository }}/collaborators/$COMMENT_AUTHOR/permission \
